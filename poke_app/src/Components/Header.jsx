@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Link, Route } from 'react-router-dom'
 import App from '../App';
 
 class Header extends Component {
@@ -8,10 +8,10 @@ class Header extends Component {
       <BrowserRouter>
         <header className='header'>
           <nav>
-            <Route exact path="/home" component={ App }> Home </Route>
-            <Route> Seus pokemons </Route>
-            <Route> Lista de pokemons </Route>
-            <Route> Campo de batalha </Route>
+            <Link to="/" className="link"> Home </Link>
+            <Link to="/My-Pokemons" className="link"> Seus pokemons </Link>
+            <Link to="List-Favorites" className="link"> Lista de pokemons </Link>
+            <Link to="/Battle" className="link"> Campo de batalha </Link>
           </nav>
         </header>
       </BrowserRouter>

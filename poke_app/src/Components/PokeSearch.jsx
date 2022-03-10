@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import missigno from '../images/Missingno.jpg'
 // import PropTypes from 'prop-types';
 
 class PokeSearch extends Component {
@@ -8,23 +9,29 @@ class PokeSearch extends Component {
     this.pokeApi = this.pokeApi.bind(this);
 
     this.state = {
-      pokeName: '',
-      pokeImg: '',
+      search: '',
     }
   }
 
   async pokeApi(name) {
+
+    if(name === '0' || name.toLowerCase() === 'missingno') {
+      setTimeout(() => {
+        this.setState({
+          pokeName: 'MissingNo',
+          pokeImg: missigno,
+        })
+      }, 5000);
+    }
+
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`
     const response = await fetch(url);
     const data = await response.json();
     console.log(data)
     if(data !== undefined) {
       this.setState({
+        pokeName: data.name,
         pokeImg: data.sprites.front_default,
-      })
-    } else {
-      this.setState({
-        pokeImg: '',
       })
     }
   }
@@ -33,9 +40,9 @@ class PokeSearch extends Component {
     const { value } = target
 
     this.setState({
-      pokeName: value,
+      search: value,
     })
-    console.log(this.pokeApi(value))
+    this.pokeApi(value)
   }
 
   componentDidMount() {
@@ -47,14 +54,16 @@ class PokeSearch extends Component {
   render() {
 
     const { 
-      pokeName,
+      search,
       pokeImg,
+      pokeName,
      } = this.state;
 
     return(
       <div  className="search">
-        <input type="text" value={ pokeName } onChange={ this.pokeName } />
+        <input type="text" value={ search } onChange={ this.pokeName } />
         <img src={ pokeImg } alt='' />
+        <> {pokeName} </>
       </div>
     );
   }

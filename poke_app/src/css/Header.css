@@ -3,4 +3,10 @@
   padding: 20px;
   margin-bottom: 15px;
   background-color: rgb(0, 214, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  color: white;
 }

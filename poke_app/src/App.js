@@ -3,13 +3,14 @@ import './css/Search.css';
 import './css/Header.css'
 import Header from './Components/Header';
 import PokeSearch from './Components/PokeSearch';
+import { BrowserRouter, Route, } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <Header />
-      <PokeSearch />
-    </div>
+      <Route path="/" component={ PokeSearch } />
+    </BrowserRouter>
   );
 }
 
