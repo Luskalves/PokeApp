@@ -8,6 +8,7 @@ function Provider({ children }) {
   const [pokeName, setPokeName] = useState('');
   const [pokeImg, setImg] = useState('');
   const [favouritePokemons, setFavourite] = useState([]);
+  const [pokeData, setPokeData] = useState({});
 
   const pokeApi = async (name) => {
     console.log('api foi')
@@ -27,6 +28,7 @@ function Provider({ children }) {
       setPokeName(data.name);
       setImg(data.sprites.front_default)
     }
+    setPokeData(data);
   }
 
   const pokeNames = async ({ target }) => {
