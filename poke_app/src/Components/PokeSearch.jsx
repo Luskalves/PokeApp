@@ -3,6 +3,7 @@ import pokeContext from '../context/pokemonContex';
 
 function PokeSearch() {
 
+  //teste
   const { search, 
     pokeName, 
     pokeImg, 
