@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const pokeContext = createContext;
+const pokeContext = createContext();
 
 export default  pokeContext;
