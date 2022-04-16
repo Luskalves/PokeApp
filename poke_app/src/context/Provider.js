@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pokeContext from './pokemonContex';
 
 function Provider({ children }) {
 
+  const [favouritePokemons, setFavourite] = useState([]);
+
   return (
-    <pokeContext.Provider>
+    <pokeContext.Provider >
       {children}
     </pokeContext.Provider>
   )

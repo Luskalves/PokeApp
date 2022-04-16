@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-import App from '../App';
+import { BrowserRouter, Link } from 'react-router-dom'
 
 class Header extends Component {
   render() {
