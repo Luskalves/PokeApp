@@ -10,6 +10,7 @@ function Provider({ children }) {
   const [favouritePokemons, setFavourite] = useState([]);
 
   const pokeApi = async (name) => {
+    console.log('api foi')
 
     if(name === '0' || name.toLowerCase() === 'missingno') {
       setTimeout(() => {
@@ -18,9 +19,8 @@ function Provider({ children }) {
         }
       , 5000);
     }
-
-    const url = `https://pokeapi.co/api/v2/pokemon/${name}`
-    const response = await fetch(url);
+    
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await response.json();
     console.log(data)
     if(data !== undefined) {
@@ -32,7 +32,8 @@ function Provider({ children }) {
   const pokeNames = async ({ target }) => {
     const { value } = target
     setSearch(value)
-    this.pokeApi(search)
+    console.log('names foi')
+    pokeApi(search)
   }
 
   const states = {

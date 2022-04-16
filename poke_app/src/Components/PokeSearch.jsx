@@ -1,7 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import missigno from '../images/Missingno.jpg'
 import pokeContext from '../context/pokemonContex';
-// import PropTypes from 'prop-types';
 
 function PokeSearch() {
 
@@ -11,12 +9,11 @@ function PokeSearch() {
     pokeNames, 
     pokeApi } = useContext(pokeContext)
 
-  // componentDidMount() {
-  //   const pokeInicial = ['bulbasaur', 'squirtle', 'charmander']
-  //   const escolha = Math.floor(Math.random() * pokeInicial.length)
-    
-  //   pokeApi(pokeInicial[escolha])
-  // }
+    useEffect(() => {
+      const pokeInicial = ['bulbasaur', 'squirtle', 'charmander']
+      const escolha = Math.floor(Math.random() * pokeInicial.length)
+      pokeApi(pokeInicial[escolha])
+    },[])
 
   return(
     <div  className="search">
