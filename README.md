@@ -1,3 +1,11 @@
-### PokeApp
+## PokeApp (em desenvolvimento)
 
-Criando aplicativo de pesquisas de pokemons e suas informações (uma pokedex básicamente) onde você pode favoritar seus pokemons favoritos 
+Uma aplicação que é possível fazer a pesquisa de pokemons e adcionalos em seus favoritos
+
+
+
+### como usar a aplicação
+
+- Faça o clone do repositório.
+- Instale as dependências com o ```npm install```.
+- Use o comando ```npm start``` para iniciar a aplicação.
